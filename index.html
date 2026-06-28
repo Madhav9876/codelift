@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CodeLift Study Platform</title>
+    <meta
+      name="description"
+      content="A functional coding study platform with lessons, quizzes, notes, saved progress, and a JavaScript playground."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" aria-label="Primary">
+        <a class="brand" href="#dashboard" aria-label="CodeLift dashboard">
+          <span class="brand-mark" aria-hidden="true">{ }</span>
+          <span>
+            <strong>CodeLift</strong>
+            <small>Study Platform</small>
+          </span>
+        </a>
+
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-link" type="button" data-route="#dashboard">
+            <span aria-hidden="true">01</span>
+            Dashboard
+          </button>
+          <button class="nav-link" type="button" data-route="#courses">
+            <span aria-hidden="true">02</span>
+            Courses
+          </button>
+          <button class="nav-link" type="button" data-route="#playground">
+            <span aria-hidden="true">03</span>
+            Playground
+          </button>
+          <button class="nav-link" type="button" data-route="#notes">
+            <span aria-hidden="true">04</span>
+            Notes
+          </button>
+        </nav>
+
+        <div class="sidebar-progress" aria-live="polite">
+          <p class="eyebrow">Overall Progress</p>
+          <div class="mini-meter" aria-hidden="true">
+            <span id="sidebarProgressBar"></span>
+          </div>
+          <strong id="sidebarProgressText">0%</strong>
+          <button class="subtle-button" type="button" id="resetProgress">Reset progress</button>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <label class="search-field">
+            <span class="visually-hidden">Search courses and lessons</span>
+            <input id="searchInput" type="search" placeholder="Search courses, lessons, or skills" autocomplete="off">
+          </label>
+          <button class="icon-button" type="button" id="themeToggle" aria-label="Switch color theme">
+            <span id="themeGlyph" aria-hidden="true">Dk</span>
+          </button>
+        </header>
+
+        <main id="app" class="app-content" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <noscript>
+      <p class="noscript">This study platform needs JavaScript enabled for lessons, quizzes, progress, and the code runner.</p>
+    </noscript>
+
+    <script src="app.js"></script>
+  </body>
+</html>
